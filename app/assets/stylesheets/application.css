@@ -13,3 +13,32 @@
  *= require_tree .
  *= require_self
  */
+
+*{
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  color: #6c6b6b /*全体の文字色統一*/
+}
+.a {
+   text-decoration:none;
+}
+.clearfix::after {
+  content:"";
+  display:block;
+  clear:both; /*html(親要素にも書くのを忘れない)*/
+}
+
+.sidemenu {
+	background-color: gray;
+}
+.nav-list {
+	text-align: right;
+	padding: 10px 0;
+	margin: 0 auto;
+}
+.nav-list-item {
+	list-style: none;
+	display: inline-block;
+	margin: 0 20px;
+}
