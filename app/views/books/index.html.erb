@@ -1,0 +1,21 @@
+<h2>Books</h2>
+
+<table width="500">
+	<thead>
+		<tr>
+			<th></th>
+			<th>Title</th>
+			<th>Opinion</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @books.each do |book| %>
+			<tr align="center">
+				<td></td>
+				<td><%= book.title %></td>
+				<td><%= book.body %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+

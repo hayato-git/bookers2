@@ -29,6 +29,7 @@
   clear:both; /*html(親要素にも書くのを忘れない)*/
 }
 
+/* 常に表示 */
 .sidemenu {
 	background-color: gray;
 }
@@ -41,4 +42,9 @@
 	list-style: none;
 	display: inline-block;
 	margin: 0 20px;
+}
+
+/* new.html.erb */
+.new {
+  text-align: center;
 }
