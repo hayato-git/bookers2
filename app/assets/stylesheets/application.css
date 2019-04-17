@@ -48,3 +48,21 @@
 .new {
   text-align: center;
 }
+
+/* edit.html.erb */
+.edit {
+  text-align: center;
+}
+
+/* show.html.erb */
+.show {
+  text-align: center;
+}
+
+/* index-html.erb */
+.index {
+  float: center;
+}
+.index-new {
+  float: left;
+}

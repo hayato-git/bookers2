@@ -1,0 +1,13 @@
+<div class="show">
+
+	<h2>Showing Book</h2>
+
+		<% if flash[:notice] %>
+			<div class="flash">
+				<%= flash[:notice] %>
+			</div>
+		<% end %>
+
+		<div>Title : <%= @book.title %></div>
+		<div>Body : <%= @book.body %></div>
+</div>
