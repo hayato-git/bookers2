@@ -27,7 +27,8 @@
 </div>
 
 	<h3>User Info</h3>
-		<h4><%= @user.name %></h4>
+		<h4>name  <%= @user.name %></h4>
+		<h4>introduction  <%= @user.introduction %></h4>
 		<% if @user.id == current_user.id %>
 			<p><%= link_to "プロフィール編集",edit_user_path(@user) %></p>
 		<% end %>
