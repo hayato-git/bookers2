@@ -9,15 +9,16 @@ class BooksController < ApplicationController
 		@book.user_id = current_user.id
 		if @book.save
 		 flash[:notice] = "successfully"
-		 redirect_to book_path(book.id)
+		 redirect_to book_path(@book.id)
 		else
-			render("books/new")
+		 render("books/new")
 		end
 	end
 
 	def index
 		@books = Book.page(params[:page]).reverse_order
 		@user =  current_user
+		@book = Book.new
 	end
 
 	def show
@@ -30,8 +31,12 @@ class BooksController < ApplicationController
 
 	def update
 		book = Book.find(params[:id])
-		book.update(book_params)
-		redirect_to book_path(book.id)
+		if book.update(book_params)
+		 flash[:notice] = "successfully"
+		 redirect_to book_path(book.id)
+		else
+		 render("books/edit")
+		end
 	end
 
 	def destroy

@@ -10,19 +10,18 @@
   </head>
 
   <body>
-
-    <div id="sidemenu">
+    <div id="topmenu">
       <nav>
         <ul class="nav-list">
           <% if user_signed_in? %>
             <li class="nav-list-item">
-              <%= link_to "Home" %>
+              <%= link_to "Home", user_path(current_user.id) %>
             </li>
             <li class="nav-list-item">
-              <%= link_to "User" %>
+              <%= link_to "User", users_path %>
             </li>
             <li class="nav-list-item">
-              <%= link_to "Books" %>
+              <%= link_to "Books", books_path %>
             </li>
             <li class="nav-list-item">
               <%= link_to "Log-out", destroy_user_session_path, method: :delete %>
@@ -35,16 +34,22 @@
               <%= link_to "About" %>
             </li>
             <li class="nav-list-item">
-              <%= link_to "Sign-up" %>
+              <%= link_to "Sign-up", "http://localhost:3000/users/sign_up" %>
             </li>
             <li class="nav-list-item">
-              <%= link_to "Log-in" %>
+              <%= link_to "Log-in", "http://localhost:3000/users/sign_in" %>
             </li>
           <% end %>
         </ul>
       </nav>
     </div>
-
+    <div class="flash">
+      <% if flash[:notice] %>
+        <div class="flash">
+          <%= flash[:notice] %>
+        </div>
+      <% end %>
+    </div>
     <%= yield %>
   </body>
 </html>

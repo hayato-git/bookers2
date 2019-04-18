@@ -1,13 +1,13 @@
 <div class="show">
 
-	<h2>Show Book</h2>
 
-		<% if flash[:notice] %>
-			<div class="flash">
-				<%= flash[:notice] %>
-			</div>
-		<% end %>
+	<h2>Show Book</h2>
 
 		<div>Title : <%= @book.title %></div>
 		<div>Body : <%= @book.body %></div>
+
+		<%= link_to "Edit", edit_book_path(@book.id) %>
+		<% if @book.user == current_user %>
+			<%= link_to "Destroy", destroy_book_path(@book.id), method: :delete %>
+		<% end %>
 </div>

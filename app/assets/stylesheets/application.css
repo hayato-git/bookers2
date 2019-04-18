@@ -30,7 +30,7 @@
 }
 
 /* 常に表示 */
-.sidemenu {
+.topmenu {
 	background-color: gray;
 }
 .nav-list {
@@ -44,25 +44,47 @@
 	margin: 0 20px;
 }
 
-/* new.html.erb */
+/* topページ*/
+.top {
+  text-align: center;
+}
+/* bookのnew */
 .new {
   text-align: center;
 }
 
-/* edit.html.erb */
+
+/* bookのedit */
 .edit {
   text-align: center;
 }
 
-/* show.html.erb */
+/* bookのshow */
 .show {
   text-align: center;
 }
 
-/* index-html.erb */
+/* bookのindexとuserのshowページ */
+main {
+  margin: 0 auto;
+  width: 800px;
+}
 .index {
   float: center;
+  height: 300px;
+}
+.user-info {
+  float: left;
 }
 .index-new {
   float: left;
+}
+
+/* userのedit*/
+.user-edit {
+  text-align: center;
+}
+
+.flash {
+  text-align: center;
 }
