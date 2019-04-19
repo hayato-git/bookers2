@@ -2,6 +2,10 @@
 	<h1>Welcome to Bookers !!</h1>
 	<p>in Bookers<br>you can share and exchange your opinions, inpressions, and emotions<br>about various books!</p>
 
-	<%= link_to "Log in", "http://localhost:3000/users/sign_in" %><br>
-	<%= link_to "Sign Up", "http://localhost:3000/users/sign_up"%>
+	<%= link_to new_user_registration_path, class: "sign_in", target: :_blank do %>
+		<button type="button" class="btn btn-primary">Sign in</button>
+	<% end %><br>
+	<%= link_to new_user_session_path, class: "sign_up", target: :_blank do %>
+		<button type="button" class="btn btn-primary">Sign up</button>
+	<% end %>
 </div>

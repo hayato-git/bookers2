@@ -15,29 +15,29 @@
         <ul class="nav-list">
           <% if user_signed_in? %>
             <li class="nav-list-item">
-              <%= link_to "Home", user_path(current_user.id) %>
+              <%= link_to "Home", user_path(current_user.id), class: "home" %>
             </li>
             <li class="nav-list-item">
-              <%= link_to "User", users_path %>
+              <%= link_to "User", users_path, class: "users" %>
             </li>
             <li class="nav-list-item">
-              <%= link_to "Books", books_path %>
+              <%= link_to "Books", books_path, class: "books" %>
             </li>
             <li class="nav-list-item">
-              <%= link_to "Log-out", destroy_user_session_path, method: :delete %>
+              <%= link_to "Log-out", destroy_user_session_path, class: "logout", method: :delete %>
             </li>
           <% else %>
             <li class="nav-list-item">
-              <%= link_to "Home" %>
+              <%= link_to "Home", "http://localhost:3000/top/", class: "home" %>
             </li>
             <li class="nav-list-item">
-              <%= link_to "About" %>
+              <%= link_to "About", class: "about" %>
             </li>
             <li class="nav-list-item">
-              <%= link_to "Sign-up", "http://localhost:3000/users/sign_up" %>
+              <%= link_to "Sign-up", new_user_session_path, class: "sign_up" %>
             </li>
             <li class="nav-list-item">
-              <%= link_to "Log-in", "http://localhost:3000/users/sign_in" %>
+              <%= link_to "sig-in", new_user_registration_path, class: "sign_in" %>
             </li>
           <% end %>
         </ul>

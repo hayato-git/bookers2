@@ -11,8 +11,10 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_tree .
- *= require_self
- */
+  *= require_self
+  */
+  @import "bootstrap-sprockets";
+  @import "bootstrap";
 
 *{
   margin: 0 auto;
@@ -48,6 +50,7 @@
 .top {
   text-align: center;
 }
+
 /* bookのnew */
 .new {
   text-align: center;
@@ -64,7 +67,7 @@
   text-align: center;
 }
 
-/* bookのindexとuserのshowページ */
+/* bookのindexとuserのshow indexページ */
 main {
   margin: 0 auto;
   width: 800px;
@@ -73,10 +76,7 @@ main {
   float: center;
   height: 300px;
 }
-.user-info {
-  float: left;
-}
-.index-new {
+.side {
   float: left;
 }
 

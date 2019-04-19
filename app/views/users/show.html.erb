@@ -1,21 +1,40 @@
 <main>
-	<div class="user-info">
+
+	<div class="side">
 		<h3>User Info</h3>
 			<h4><%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %></h4>
 			<h4><%= @user.name %></h4>
 			<h4><%= @user.introduction %></h4>
 			<% if @user.id == current_user.id %>
-				<p><%= link_to "プロフィール編集",edit_user_path(@user) %></p>
+				<p><%= link_to edit_user_path(@user), class: "edit_user_#{@user.id}", target: :blank do %>
+					<i class="btn btn-primary btn-block"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></i>
+					<% end %></p>
+			<% end %>
+
+			<%= form_for(@book) do |f| %>
+				<% if @book.errors.any? %>
+					<h2><%= @book.errors.count %>件エラー発生</h2>
+					<% @book.errors.full_messages.each do |message| %>
+						<li> <%= message %> </li>
+					<% end %>
+				<% end %>
+				<h3>New Book</h3>
+				<h4>Title</h4>
+				<%= f.text_field :title, class: "book_title" %>
+
+				<h4>Opinion</h4>
+				<%= f.text_area :body, class: "book_body" %>
+				<br> <%= f.submit 'Create Book', class: "btn btn-primary" %> </br>
 			<% end %>
 	</div>
-	<div class="index">
 
+	<div class="index">
 		<table width="500">
 			<thead>
 				<tr>
 					<th></th>
-					<th>Title</th>
-					<th>Opinion</th>
+					<th></th>
+					<th></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -24,30 +43,12 @@
 						<td><%= attachment_image_tag @user, :profile_image, size: "40x40", format: 'jpeg', fallback: "no_image.jpg" %></td>
 						<td><%= book.title %></td>
 						<td><%= book.body %></td>
-						<td><%= link_to "show", book_path(book.id) %></td>
+						<td><%= link_to "show", book_path(book.id), class: "book_#{book.id}" %></td>
 					</tr>
 				<% end %>
 				<%= paginate @books, class: "pagenate" %>
 			</tbody>
 		</table>
-	</div>
-	<div class="index-new">
-		<%= form_for(@book) do |f| %>
-			<% if @book.errors.any? %>
-				<h2><%= @book.errors.count %>件エラー発生</h2>
-				<% @book.errors.full_messages.each do |message| %>
-					<li> <%= message %> </li>
-				<% end %>
-			<% end %>
-			<h2>New Book</h2>
-			<h4>Title</h4>
-			<%= f.text_field :title, class: "book_title" %>
-
-			<h4>Opinion</h4>
-			<%= f.text_area :body, class: "book_body" %>
-			<br> <%= f.submit 'Create Book' %> </br>
-
-		<% end %>
 	</div>
 
 </main>
