@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   get 'top' => 'top#top'
-  root 'books#index'
+  root 'users#show'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :books, only: [:new, :create, :index, :show, :edit, :update, :destroy]
