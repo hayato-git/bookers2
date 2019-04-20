@@ -10,34 +10,50 @@
   </head>
 
   <body>
-    <div id="topmenu">
+    <div class="topmenu">
       <nav>
         <ul class="nav-list">
           <% if user_signed_in? %>
             <li class="nav-list-item">
-              <%= link_to "Home", user_path(current_user.id), class: "home" %>
+              <%= link_to user_path(current_user.id), class: "home", target: :_blank do %>
+                <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</button>
+              <% end %>
             </li>
             <li class="nav-list-item">
-              <%= link_to "User", users_path, class: "users" %>
+              <%= link_to users_path, class: "users", target: :_blank do %>
+                <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>User</button>
+              <% end %>
             </li>
             <li class="nav-list-item">
-              <%= link_to "Books", books_path, class: "books" %>
+              <%= link_to books_path, class: "books", target: :_blank do %>
+                <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-book" aria-hidden="true"></span>Book</button>
+              <% end %>
             </li>
             <li class="nav-list-item">
-              <%= link_to "Log-out", destroy_user_session_path, class: "logout", method: :delete %>
+              <%= link_to destroy_user_session_path, class: "logout", method: :delete, target: :_blank do %>
+                <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>Log out</button>
+              <% end %>
             </li>
           <% else %>
             <li class="nav-list-item">
-              <%= link_to "Home", "http://localhost:3000/top/", class: "home" %>
+              <%= link_to top_path, class: "home", target: :_blank do %>
+                <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</button>
+              <% end %>
             </li>
             <li class="nav-list-item">
-              <%= link_to "About", class: "about" %>
+              <%= link_to top_path, class: "about", target: :_blank do %>
+                <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-link" aria-hidden="true"></span>About</button>
+              <% end %>
             </li>
             <li class="nav-list-item">
-              <%= link_to "Sign-up", new_user_registration_path, class: "sign_up" %>
+              <%= link_to new_user_registration_path, class: "sign_up", target: :_blank do %>
+                <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>sign up</button>
+              <% end %>
             </li>
             <li class="nav-list-item">
-              <%= link_to "sig-in", new_user_session_path, class: "sign_in" %>
+              <%= link_to new_user_session_path, class: "sign_in", target: :_blank do %>
+                <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>sign in</button>
+              <% end %>
             </li>
           <% end %>
         </ul>
@@ -53,6 +69,3 @@
     <%= yield %>
   </body>
 </html>
-
-
-new_user_session_path,
