@@ -2,7 +2,7 @@
 
 	<%= form_for(@book) do |f| %>   <!--url: book_path-->
 		<% if @book.errors.any? %>
-			<h2><%= @book.errors.count %>件エラー発生</h2>
+			<h2>error</h2>
 			<% @book.errors.full_messages.each do |message| %>
 				<li> <%= message %> </li>
 			<% end %>

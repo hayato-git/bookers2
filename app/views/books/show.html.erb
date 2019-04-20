@@ -5,8 +5,9 @@
 
 		<div>Title : <%= @book.title %></div>
 		<div>Body : <%= @book.body %></div>
-
-		<%= link_to "Edit", edit_book_path(@book.id), class: "edit_book_#{@book.id}" %>
+		<% if @book.user == current_user %>
+			<%= link_to "Edit", edit_book_path(@book.id), class: "edit_book_#{@book.id}" %>
+		<% end %>
 		<% if @book.user == current_user %>
 			<%= link_to "Destroy", destroy_book_path(@book.id), class: "destroy_book_#{@book.id}", method: :delete %>
 		<% end %>

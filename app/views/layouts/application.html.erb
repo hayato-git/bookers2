@@ -36,12 +36,12 @@
             </li>
           <% else %>
             <li class="nav-list-item">
-              <%= link_to top_path, class: "home", target: :_blank do %>
+              <%= link_to root_path, class: "home", target: :_blank do %>
                 <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</button>
               <% end %>
             </li>
             <li class="nav-list-item">
-              <%= link_to top_path, class: "about", target: :_blank do %>
+              <%= link_to about_path, class: "about", target: :_blank do %>
                 <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-link" aria-hidden="true"></span>About</button>
               <% end %>
             </li>
@@ -62,7 +62,7 @@
     <div class="flash">
       <% if flash[:notice] %>
         <div class="flash">
-          <%= flash[:notice] %>
+          <h3 class="error"><%= flash[:notice] %></h3>
         </div>
       <% end %>
     </div>

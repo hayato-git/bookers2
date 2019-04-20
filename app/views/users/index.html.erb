@@ -43,7 +43,7 @@
 								<tr align="center">
 									<td><%= attachment_image_tag user, :profile_image, size: "40x40", format: 'jpeg', fallback: "no_image.jpg" %></td>
 									<td><%= user.name %></td>
-									<td><%= link_to "show", user_path(user.id), class: "book_#{@book.id}" %></td>
+									<td><%= link_to "show", user_path(user.id), class: "book_#{book.id}" %></td>
 								</tr>
 							<% end %>
 						</tbody>
