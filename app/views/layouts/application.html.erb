@@ -15,43 +15,43 @@
         <ul class="nav-list">
           <% if user_signed_in? %>
             <li class="nav-list-item">
-              <%= link_to user_path(current_user.id), class: "home", target: :_blank do %>
+              <%= link_to user_path(current_user.id), class: "home" do %>
                 <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</button>
               <% end %>
             </li>
             <li class="nav-list-item">
-              <%= link_to users_path, class: "users", target: :_blank do %>
+              <%= link_to users_path, class: "users" do %>
                 <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>User</button>
               <% end %>
             </li>
             <li class="nav-list-item">
-              <%= link_to books_path, class: "books", target: :_blank do %>
+              <%= link_to books_path, class: "books" do %>
                 <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-book" aria-hidden="true"></span>Book</button>
               <% end %>
             </li>
             <li class="nav-list-item">
-              <%= link_to destroy_user_session_path, class: "logout", method: :delete, target: :_blank do %>
+              <%= link_to destroy_user_session_path, class: "logout", method: :delete do %>
                 <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>Log out</button>
               <% end %>
             </li>
           <% else %>
             <li class="nav-list-item">
-              <%= link_to root_path, class: "home", target: :_blank do %>
+              <%= link_to root_path, class: "home" do %>
                 <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</button>
               <% end %>
             </li>
             <li class="nav-list-item">
-              <%= link_to about_path, class: "about", target: :_blank do %>
+              <%= link_to about_path, class: "about" do %>
                 <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-link" aria-hidden="true"></span>About</button>
               <% end %>
             </li>
             <li class="nav-list-item">
-              <%= link_to new_user_registration_path, class: "sign_up", target: :_blank do %>
+              <%= link_to new_user_registration_path, class: "sign_up" do %>
                 <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>sign up</button>
               <% end %>
             </li>
             <li class="nav-list-item">
-              <%= link_to new_user_session_path, class: "sign_in", target: :_blank do %>
+              <%= link_to new_user_session_path, class: "sign_in" do %>
                 <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>sign in</button>
               <% end %>
             </li>

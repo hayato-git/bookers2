@@ -8,7 +8,7 @@
 						<h4><%= @user.name %></h4>
 						<h4><%= @user.introduction %></h4>
 						<% if @user.id == current_user.id %>
-							<p><%= link_to edit_user_path(@user), class: "edit_user_#{@user.id}", target: :blank do %>
+							<p><%= link_to edit_user_path(@user), class: "edit_user_#{@user.id}" do %>
 									<i class="btn btn-primary"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></i>
 								<% end %></p>
 						<% end %>

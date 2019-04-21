@@ -8,7 +8,7 @@
 						<h4><%= @user.name %></h4>
 						<h4><%= @user.introduction %></h4>
 						<% if @user.id == current_user.id %>
-							<p><%= link_to edit_user_path(@user), class: "edit_user_#{@user.id}", target: :blank do %>
+							<p><%= link_to edit_user_path(@user), class: "edit_user_#{@user.id}" do %>
 									<i class="btn btn-primary"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></i>
 								<% end %></p>
 						<% end %>
@@ -43,7 +43,7 @@
 								<tr align="center">
 									<td><%= attachment_image_tag user, :profile_image, size: "40x40", format: 'jpeg', fallback: "no_image.jpg" %></td>
 									<td><%= user.name %></td>
-									<td><%= link_to "show", user_path(user.id), class: "book_#{book.id}" %></td>
+									<td><%= link_to "show", user_path(user.id), class: "user_#{user.id}" %></td>
 								</tr>
 							<% end %>
 						</tbody>
