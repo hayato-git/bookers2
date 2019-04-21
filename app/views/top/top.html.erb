@@ -2,10 +2,10 @@
 	<h1>Welcome to <span class="glyphicon glyphicon-book" aria-hidden="true"></span>Bookers !!</h1>
 	<p>in <span class="glyphicon glyphicon-book" aria-hidden="true"></span>Bookers<br>you can share and exchange your opinions, inpressions, and emotions<br>about various books!</p>
 
-	<%= link_to new_user_registration_path, class: "sign_in" do %>
+	<%= link_to new_user_session_path, class: "sign_in" do %>
 		<button type="button" class="btn btn-primary">Sign in</button>
 	<% end %><br>
-	<%= link_to new_user_session_path, class: "sign_up" do %>
+	<%= link_to new_user_registration_path, class: "sign_up" do %>
 		<button type="button" class="btn btn-primary">Sign up</button>
 	<% end %>
 </div>
